@@ -170,7 +170,7 @@ a {
       rgba(9, 15, 27, .24) 46%,
       rgba(9, 15, 27, 0) 68%
     ),
-    url('/images/ornamenti-fantasy.png');
+    url('/il-cantastorie/images/ornamenti-fantasy.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -512,14 +512,14 @@ a {
   scroll-margin-top: 86px;
 }
 
-/* Il label ora usa gli stessi margini della sezione */
+/* Label allineato ai margini delle altre sezioni */
 
 .manifesto > .section-label {
   width: 100%;
   justify-content: flex-start;
 }
 
-/* Il contenuto centrale rimane centrato */
+/* Contenuto centrale */
 
 .manifesto-content {
   max-width: 760px;
@@ -705,7 +705,7 @@ a {
         rgba(9, 15, 27, .55) 40%,
         rgba(9, 15, 27, .08) 100%
       ),
-      url('/images/ornamenti-fantasy.png');
+      url('/il-cantastorie/images/ornamenti-fantasy.png');
     background-size: cover;
     background-position: center center;
   }
