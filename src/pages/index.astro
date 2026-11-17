@@ -6,11 +6,13 @@ const projects = [
   {
     number: '01',
     category: 'GDR · MONDI FANTASY',
-    name: 'Aeldria',
+    name: 'AELDRIA - LIFE AND DICE',
     description:
-      'Un mondo da esplorare, storie da vivere e avventure ancora tutte da scrivere.',
+      'La prima fusione di D&D e mondi Anime Isekai: sii quel che vuoi essere, costruisci la tua storia.',
     status: 'PRIMO PROGETTO',
     href: '#contatti',
+    image: '/il-cantastorie/images/aeldria/aeldria-cover.png',
+    imageAlt: 'Aeldria Life and Dice - Il mondo fantasy',
   },
   {
     number: '02',
@@ -49,8 +51,7 @@ const projects = [
 
       <nav class="navigation" aria-label="Navigazione principale">
         <a href="#home" aria-label="Home">Home</a>
-        <a href="#mondi">I nostri mondi</a>
-        <a href="#creazioni">Creazioni</a>
+        <a href="#creazioni">I nostri mondi</a>
         <a href="#chi-siamo">Chi siamo</a>
         <a class="nav-contact" href="#contatti">Contattaci</a>
       </nav>
@@ -74,45 +75,20 @@ const projects = [
             Benvenuti nel mondo de Il Cantastorie.
           </p>
 
-          <a class="primary-button" href="#mondi">
+          <a class="primary-button" href="#creazioni">
             ESPLORA I NOSTRI MONDI <span>→</span>
           </a>
         </div>
       </section>
 
-      <!-- INTRODUZIONE -->
-      <section class="intro section-padding" id="mondi">
-        <div class="section-label">01 / IL NOSTRO UNIVERSO</div>
-
-        <div class="intro-content">
-          <h2>
-            NON RACCONTIAMO<br />
-            SOLO STORIE.<br />
-            <span>CREIAMO MONDI.</span>
-          </h2>
-
-          <p>
-            Siamo un collettivo di creativi uniti dalla passione per
-            il fantasy, i giochi di ruolo e la narrazione.
-            Diamo forma a universi da esplorare, personaggi da
-            incontrare e avventure da ricordare.
-          </p>
-        </div>
-      </section>
-
-      <!-- PROGETTI -->
+      <!-- I NOSTRI MONDI -->
       <section class="projects section-padding" id="creazioni">
-        <div class="section-heading">
-          <div>
-            <div class="section-label">02 / LE NOSTRE CREAZIONI</div>
-            <h2>MONDI DA <span>ESPLORARE.</span></h2>
-          </div>
-
-          <p>
-            Ogni progetto è un nuovo viaggio.<br />
-            E questo è soltanto l'inizio.
-          </p>
-        </div>
+<div class="section-heading">
+  <div>
+    <div class="section-label">01 / I NOSTRI MONDI</div>
+    <h2>MONDI DA <span>ESPLORARE.</span></h2>
+  </div>
+</div>
 
         <div class="project-grid">
           {projects.map((project) => (
@@ -121,9 +97,23 @@ const projects = [
               href={project.href}
             >
               <div class="project-art">
-                <span class="project-number">{project.number}</span>
-                <span class="project-mark">✧</span>
-                <span class="project-status">{project.status}</span>
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.imageAlt}
+                    style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:1;"
+                  />
+                ) : (
+                  <span class="project-mark">✧</span>
+                )}
+
+                <span class="project-number" style="z-index:2;">
+                  {project.number}
+                </span>
+
+                <span class="project-status" style="z-index:2;">
+                  {project.status}
+                </span>
               </div>
 
               <div class="project-info">
@@ -139,7 +129,7 @@ const projects = [
 
       <!-- CHI SIAMO -->
       <section class="manifesto section-padding" id="chi-siamo">
-        <div class="section-label">03 / CHI SIAMO</div>
+        <div class="section-label">02 / CHI SIAMO</div>
 
         <div class="manifesto-content">
           <span class="manifesto-symbol">✧</span>
