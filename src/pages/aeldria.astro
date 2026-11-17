@@ -1,0 +1,202 @@
+
+---
+import '../styles/aeldria.css';
+
+const base = '/il-cantastorie';
+const images = `${base}/images`;
+const aeldriaImages = `${images}/aeldria`;
+const video = `${base}/videos/trailer-aeldria.mp4`;
+---
+
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090f1b" />
+    <meta
+      name="description"
+      content="Aeldria Life and Dice: un mondo fantasy da esplorare. Sii quel che vuoi essere, costruisci la tua storia."
+    />
+    <title>Aeldria — Life and Dice | Il Cantastorie</title>
+  </head>
+
+  <body class="aeldria-page">
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+      <a class="brand" href={`${base}/`} aria-label="Torna a Il Cantastorie">
+        <img
+          src={`${images}/cantastorie-logo.png`}
+          alt="Il Cantastorie"
+          class="brand-logo"
+        />
+      </a>
+
+      <a class="nav-contact" href={`${base}/`}>
+        <span>←</span>
+        TORNA ALLA HOME
+      </a>
+    </header>
+
+    <main>
+
+      <!-- TITOLO -->
+      <section class="aeldria-heading">
+        <span class="aeldria-eyebrow">UN PROGETTO DE "IL CANTASTORIE"</span>
+
+        <h1>
+          AELDRIA
+          <span>Life and Dice</span>
+        </h1>
+
+        <div class="aeldria-divider">
+          <span></span>
+          ✧
+          <span></span>
+        </div>
+      </section>
+
+      <!-- VIDEO PRINCIPALE -->
+      <section class="aeldria-video-section" id="trailer">
+        <div class="aeldria-container">
+          <div class="video-frame">
+            <video
+              class="aeldria-trailer"
+              controls
+              playsinline
+              preload="metadata"
+              controlsList="nodownload"
+              disablePictureInPicture
+              poster={`${aeldriaImages}/aeldria-cover.png`}
+            >
+              <source src={video} type="video/mp4" />
+              Il tuo browser non supporta la riproduzione video.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRIMA SEZIONE: TESTO SINISTRA / IMMAGINE DESTRA -->
+      <section class="aeldria-feature" id="scopri-aeldria">
+        <div class="aeldria-container feature-layout">
+
+          <div class="feature-copy">
+            <span class="aeldria-section-label">01 / SCOPRI AELDRIA</span>
+
+            <h2>
+              UN MONDO<br />
+              <span>DA ESPLORARE.</span>
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+              [Inserire qui la descrizione del mondo di Aeldria,
+              della sua ambientazione e delle sue caratteristiche.]
+            </p>
+          </div>
+
+          <div class="feature-image">
+            <img
+              src={`${aeldriaImages}/tabaren.png`}
+              alt="L'ambientazione fantasy di Aeldria"
+              class="feature-photo"
+              loading="lazy"
+            />
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECONDA SEZIONE: IMMAGINE SINISTRA / TESTO DESTRA -->
+      <section class="aeldria-feature feature-reverse" id="vivi-la-storia">
+        <div class="aeldria-container feature-layout">
+
+          <div class="feature-image">
+            <img
+              src={`${aeldriaImages}/fabbro.png`}
+              alt="Personaggi e avventure nel mondo di Aeldria"
+              class="feature-photo"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="feature-copy">
+            <span class="aeldria-section-label">02 / VIVI LA TUA STORIA</span>
+
+            <h2>
+              SII QUEL CHE<br />
+              <span>VUOI ESSERE.</span>
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+              [Inserire qui la descrizione dell'esperienza di gioco,
+              dei personaggi e delle possibilità offerte da Aeldria.]
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TERZA SEZIONE: KICKSTARTER -->
+      <section class="kickstarter-section" id="kickstarter">
+        <div class="kickstarter-content">
+
+          <span class="aeldria-section-label">
+            03 / SOSTIENI AELDRIA
+          </span>
+
+          <h2>
+            LA NOSTRA STORIA.<br />
+            <span>ANCHE LA TUA.</span>
+          </h2>
+
+          <div class="gold-line"></div>
+
+          <img
+            src={`${images}/kickstarter-logo.png`}
+            alt="Kickstarter"
+            class="kickstarter-logo"
+            loading="lazy"
+          />
+
+          <p>
+            Aeldria sta prendendo vita. Presto potrai contribuire
+            alla realizzazione di questo mondo e diventare parte
+            della sua storia.
+          </p>
+
+          <a
+            href="https://www.kickstarter.com/"
+            class="kickstarter-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            SCOPRI LA CAMPAGNA
+            <span>↗</span>
+          </a>
+
+          <small>PROSSIMAMENTE SU KICKSTARTER</small>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="aeldria-footer">
+      <a href={`${base}/`} class="footer-brand">
+        IL CANTASTORIE
+      </a>
+
+      <span>AELDRIA LIFE AND DICE</span>
+
+      <small>
+        © 2026 IL CANTASTORIE · TUTTI I DIRITTI RISERVATI
+      </small>
+    </footer>
+
+  </body>
+</html>

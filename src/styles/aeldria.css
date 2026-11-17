@@ -1,0 +1,601 @@
+
+/* =========================================
+   AELDRIA LIFE AND DICE
+   DESIGN SYSTEM
+========================================= */
+
+:root {
+  --a-night: #090f1b;
+  --a-navy: #101b2c;
+  --a-navy-soft: #152238;
+  --a-gold: #b99152;
+  --a-gold-light: #dfc28c;
+  --a-gold-muted: #80663f;
+  --a-ivory: #eee5d4;
+  --a-muted: #a9a9a7;
+  --a-line: rgba(201, 162, 99, 0.25);
+}
+
+/* =========================================
+   BASE
+========================================= */
+
+.aeldria-page {
+  margin: 0;
+  background: var(--a-night);
+  color: var(--a-ivory);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.aeldria-page *,
+.aeldria-page *::before,
+.aeldria-page *::after {
+  box-sizing: border-box;
+}
+
+.aeldria-page main {
+  overflow: hidden;
+}
+
+.aeldria-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.aeldria-page .site-header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 86px;
+  padding: 0 clamp(20px, 5vw, 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid rgba(223, 194, 140, .18);
+  background: rgba(9, 15, 27, .96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.aeldria-page .brand {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.aeldria-page .brand-logo {
+  display: block;
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+}
+
+.aeldria-page .nav-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
+  max-width: 100%;
+  padding: 12px 18px;
+  border: 1px solid var(--a-gold-muted);
+  color: var(--a-gold-light);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+  transition: background .3s ease, color .3s ease;
+}
+
+.aeldria-page .nav-contact:hover {
+  background: var(--a-gold);
+  color: var(--a-night);
+}
+
+.aeldria-page .nav-contact span {
+  font-size: 15px;
+}
+
+/* =========================================
+   TITOLO
+========================================= */
+
+.aeldria-heading {
+  padding: 125px 7% 12px;
+  text-align: center;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(38, 59, 80, .45),
+      transparent 70%
+    ),
+    var(--a-night);
+}
+
+.aeldria-eyebrow,
+.aeldria-section-label {
+  display: block;
+  color: var(--a-gold-light);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.aeldria-heading h1 {
+  margin: 18px 0 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(58px, 8vw, 94px);
+  font-weight: 600;
+  line-height: .88;
+  letter-spacing: -2px;
+  color: var(--a-gold-light);
+}
+
+.aeldria-heading h1 span {
+  display: block;
+  margin-top: 12px;
+  color: var(--a-ivory);
+  font-size: clamp(25px, 3vw, 36px);
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.aeldria-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: min(260px, 75%);
+  margin: 18px auto 8px;
+  color: var(--a-gold);
+  font-size: 19px;
+}
+
+.aeldria-divider span {
+  height: 1px;
+  flex: 1;
+  background: var(--a-gold-muted);
+}
+
+/* =========================================
+   CONTENITORI
+========================================= */
+
+.aeldria-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   VIDEO PRINCIPALE
+========================================= */
+
+.aeldria-video-section {
+  padding: 12px 24px 70px;
+  background: var(--a-night);
+}
+
+.aeldria-video-section .aeldria-container {
+  max-width: 800px;
+}
+
+.video-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  padding: 0;
+  margin: 0 auto;
+  border: 1px solid rgba(185, 145, 82, .55);
+  background: #000;
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, .4),
+    0 0 30px rgba(185, 145, 82, .08);
+  overflow: hidden;
+}
+
+.aeldria-trailer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  background: #000;
+  border: 0;
+}
+
+/* =========================================
+   SEZIONI IMMAGINE + TESTO
+========================================= */
+
+.aeldria-feature {
+  padding: 80px 6%;
+  background: var(--a-navy);
+}
+
+.feature-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(30px, 5vw, 60px);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-copy {
+  width: 100%;
+  max-width: 520px;
+  min-width: 0;
+}
+
+.feature-copy h2 {
+  margin: 25px 0 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(43px, 5vw, 65px);
+  line-height: .98;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.feature-copy h2 span {
+  color: var(--a-gold-light);
+  font-style: italic;
+}
+
+.gold-line {
+  width: 65px;
+  height: 1px;
+  margin: 27px 0;
+  background: var(--a-gold);
+}
+
+.feature-copy p {
+  max-width: 470px;
+  margin: 0;
+  color: #b9bdc5;
+  font-size: 13px;
+  line-height: 2;
+}
+
+/* =========================================
+   IMMAGINI AELDRIA
+========================================= */
+
+.feature-image {
+  width: 100%;
+  max-width: 520px;
+  min-width: 0;
+  margin: 0 auto;
+}
+
+.feature-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid rgba(185, 145, 82, .4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
+}
+
+/* =========================================
+   SECONDA SEZIONE — INVERSIONE
+========================================= */
+
+.feature-reverse {
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(38, 59, 80, .25),
+      transparent 70%
+    ),
+    var(--a-night);
+}
+
+/* =========================================
+   KICKSTARTER
+========================================= */
+
+.kickstarter-section {
+  position: relative;
+  padding: 100px 7%;
+  text-align: center;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(38, 59, 80, .55),
+      transparent 70%
+    ),
+    linear-gradient(145deg, #101b2c, #090f1b);
+  border-top: 1px solid var(--a-line);
+  border-bottom: 1px solid var(--a-line);
+}
+
+.kickstarter-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.kickstarter-content h2 {
+  margin: 28px 0 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 6vw, 68px);
+  line-height: .98;
+  font-weight: 500;
+}
+
+.kickstarter-content h2 span {
+  color: var(--a-gold-light);
+  font-style: italic;
+}
+
+.kickstarter-content .gold-line {
+  margin: 30px auto;
+}
+
+.kickstarter-logo {
+  display: block;
+  width: 190px;
+  max-width: 65%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 25px;
+}
+
+.kickstarter-content p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #b9bdc5;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.kickstarter-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 38px;
+  padding: 17px 30px;
+  border: 1px solid var(--a-gold);
+  background: var(--a-gold);
+  color: var(--a-night) !important;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition:
+    background .3s ease,
+    color .3s ease,
+    transform .3s ease;
+}
+
+.kickstarter-button:hover {
+  background: transparent;
+  color: var(--a-gold-light) !important;
+  transform: translateY(-3px);
+}
+
+.kickstarter-button span {
+  font-size: 16px;
+}
+
+.kickstarter-content > small {
+  display: block;
+  margin-top: 22px;
+  color: var(--a-muted);
+  font-size: 8px;
+  letter-spacing: 3px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.aeldria-footer {
+  padding: 35px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-top: 1px solid var(--a-line);
+  background: #070c14;
+}
+
+.aeldria-footer .footer-brand {
+  color: var(--a-gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.aeldria-footer span,
+.aeldria-footer small {
+  color: #858d9b;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .aeldria-page .site-header {
+    padding: 0 4%;
+  }
+
+  .aeldria-heading {
+    padding-top: 115px;
+  }
+
+  .aeldria-video-section {
+    padding: 10px 5% 55px;
+  }
+
+  .aeldria-feature {
+    padding: 65px 5%;
+  }
+
+  .feature-layout {
+    gap: 30px;
+  }
+
+  .feature-copy h2 {
+    font-size: clamp(36px, 5vw, 52px);
+  }
+
+  .feature-image {
+    max-width: 100%;
+  }
+
+  .aeldria-footer {
+    padding: 30px 6%;
+  }
+}
+
+/* =========================================
+   SMARTPHONE
+========================================= */
+
+@media (max-width: 700px) {
+  .aeldria-page .site-header {
+    height: 72px;
+    padding: 0 16px;
+    gap: 12px;
+  }
+
+  .aeldria-page .brand-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .aeldria-page .nav-contact {
+    gap: 7px;
+    padding: 10px 11px;
+    font-size: 8px;
+    letter-spacing: .8px;
+  }
+
+  .aeldria-page .nav-contact span {
+    font-size: 13px;
+  }
+
+  .aeldria-heading {
+    padding: 100px 6% 10px;
+  }
+
+  .aeldria-eyebrow {
+    font-size: 8px;
+    letter-spacing: 2.5px;
+  }
+
+  .aeldria-heading h1 {
+    font-size: clamp(52px, 13vw, 75px);
+  }
+
+  .aeldria-heading h1 span {
+    font-size: 27px;
+  }
+
+  .aeldria-divider {
+    margin: 14px auto 5px;
+  }
+
+  .aeldria-video-section {
+    padding: 8px 12px 40px;
+  }
+
+  .aeldria-feature {
+    padding: 55px 7%;
+  }
+
+  .feature-layout,
+  .feature-reverse .feature-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .feature-copy {
+    max-width: 100%;
+  }
+
+  .feature-copy h2 {
+    font-size: clamp(40px, 10vw, 53px);
+  }
+
+  .feature-copy p {
+    font-size: 12px;
+  }
+
+  .feature-image {
+    max-width: 520px;
+  }
+
+  .feature-photo {
+    aspect-ratio: 4 / 3;
+  }
+
+  .feature-reverse .feature-image {
+    order: 2;
+  }
+
+  .feature-reverse .feature-copy {
+    order: 1;
+  }
+
+  .kickstarter-section {
+    padding: 75px 7%;
+  }
+
+  .kickstarter-content h2 {
+    font-size: clamp(38px, 10vw, 52px);
+  }
+
+  .kickstarter-logo {
+    width: 165px;
+  }
+
+  .kickstarter-content p {
+    font-size: 12px;
+  }
+
+  .kickstarter-button {
+    padding: 15px 22px;
+    font-size: 9px;
+  }
+
+  .aeldria-footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 35px 7%;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITÀ
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .aeldria-page *,
+  .aeldria-page *::before,
+  .aeldria-page *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
